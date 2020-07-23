@@ -8,6 +8,7 @@ const hbs = require('hbs')
 // console.log(path.join(__dirname, '../public')); //path to file itself, .. goes up a folder
 
 const app = express(); //creates express app
+const port = process.env.PORT || 3000 //heroku port
 
 //Define paths for express config--------------------------------------
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -132,6 +133,6 @@ app.get('/weather', (req, res) => {
 //app.com/help
 //app.com/about
 
-app.listen(3000, () => {
-    console.log('server started');
+app.listen(port, () => {
+    console.log('server started on ' + port);
 }) //starts up server
